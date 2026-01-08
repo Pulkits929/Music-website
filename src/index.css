@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme {
+  /* Use the --color- namespace to create bg-gold, text-gold, etc. */
+  --color-gold: #cfa85c;
+  --color-dark: #0c0c0c;
+
+  /* Use the --font- namespace to create font-body */
+  --font-body: "Poppins", "sans-serif";
+  --font-heading:"Playfair Display", "serif";
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+@layer base {
+  body {
+    @apply bg-[#0f0b1e] text-white font-body;
+  }
+}
