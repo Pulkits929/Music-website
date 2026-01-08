@@ -36,10 +36,18 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
+            className="bg-yellow-500 mr-6 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
           >
-            Book Your Lesson
+            Explore Courses
           </motion.button>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
+          >
+            Book a free trial
+          </motion.button>
+          
         </motion.div>
       </div>
     </section>
