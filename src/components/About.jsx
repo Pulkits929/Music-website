@@ -1,7 +1,7 @@
 import AnimateOnScroll from "./AnimateOnScroll.jsx";
 export default function About() {
     return (
-      <section id="about" className="scroll-mt-15 py-20 max-w-7xl bg-purple-900/30 mx-auto px-6 ">
+      <section id="about" className="scroll-mt-15 py-20 max-w-full pt-32 bg-purple-700/30 mx-auto px-6 ">
         <AnimateOnScroll>
         <h2 className="font-heading text-4xl text-gold mb-6">Meet Your Music Teacher</h2>
         <h3 className="text-2xl mb-2">Divyanshu Vashistha</h3>

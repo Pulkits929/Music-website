@@ -31,13 +31,13 @@ export default function Navbar() {
 
   return (
     <nav
-  className={`fixed w-full z-50 transition-all duration-300 transform
+    className={`fixed w-full z-50 transition-all duration-300 transform
     ${
       scrolled
-        ? "bg-black/90 backdrop-blur shadow-lg scale-[1.02]"
-        : "bg-transparent scale-100"
+        ? "bg-black/90 backdrop-blur  shadow-lg scale-[1.02]"
+        : "bg-gradient-to-b from-black/90 via-black/50 to-black/0 scale-100"
     }`}
->
+    >
 
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <h1

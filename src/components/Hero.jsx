@@ -2,24 +2,25 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-screen w-full overflow-hidden pb-32 ">
       {/* Background Video */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-115"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-115 "
       >
-        <source src="/hero_video.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dmdtpqfel/video/upload/v1767893767/hero_video_ynscbr.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Overlay to improve text readability */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-l from-white-950/60 via-black/70 to-black/80
+ z-10" />
 
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center">
+      <div className="relative mt-10 z-20 w-full h-full flex items-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,20 +37,21 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-yellow-500 mr-6 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
+            className="bg-white mr-6 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
           >
             Explore Courses
           </motion.button>
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
+            className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
           >
             Book a free trial
-          </motion.button>
-          
+          </motion.button>  
         </motion.div>
+        
       </div>
     </section>
+    
   );
 }

@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Stats from "./components/stats";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
@@ -15,6 +16,7 @@ export default function App() {
     <>
       <Navbar />
       <Hero></Hero>
+      <Stats></Stats>
       <About></About>
       <Services></Services>
       <HowItWorks></HowItWorks>
