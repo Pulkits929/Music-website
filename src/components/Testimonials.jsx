@@ -15,7 +15,7 @@ export default function Testimonials() {
     ];
   
     return (
-      <section id="testimonials" className="scroll-mt-15 py-20 bg-black">
+      <section id="testimonials" className="scroll-mt-15 py-20 bg-gradient-to-b from-black/0 via-black/50 to-[#0b0b0f]">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-heading text-gold mb-12 text-center">
             What Students & Parents Say

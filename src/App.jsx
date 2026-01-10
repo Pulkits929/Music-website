@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <>
+    
       <Navbar />
       <Hero></Hero>
       
@@ -28,7 +29,8 @@ export default function App() {
       <Gallery></Gallery>
       <Booking></Booking>
       <Contact></Contact>
-      <Footer></Footer>   
+      <Footer></Footer> 
+      
     </>
   );
 }

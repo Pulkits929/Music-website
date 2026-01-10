@@ -20,7 +20,7 @@ export default function Booking() {
     }
   
     return (
-      <section id="book" className="py-20 scroll-mt-15 bg-[#0f0b1e]">
+      <section id="book" className="py-20 scroll-mt-16 bg-[#0f0b1e]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6">
           
           <form onSubmit={handleSubmit} className="space-y-4">
