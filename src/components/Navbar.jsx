@@ -39,12 +39,13 @@ export default function Navbar() {
     }`}
     >
 
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 -py-1">
         <h1
           onClick={() => handleScroll("home")}
           className="font-heading text-2xl text-gold cursor-pointer"
         >
-          Music Academy
+          <img src="/golden_logo-Photoroom.png" alt="" className="w-32 my-1 p-0 mx-6 " />
+          {/* Music Academy */}
         </h1>
 
         <ul className="hidden md:flex gap-8 text-base">
