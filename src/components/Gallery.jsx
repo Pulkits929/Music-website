@@ -61,19 +61,46 @@ export default function Roadmap() {
 
             <div className="space-y-12">
               {stages.map((s, i) => (
-                <div key={i} className="relative flex gap-6">
+                <div
+                key={i}
+                className="relative flex gap-6 items-center group"
+              >
+              
                   
                   {/* DOT */}
-                  <div className="relative z-10">
-                    <div className="w-8 h-8 rounded-full bg-[#0b0b0f]
-                      border border-gold/40 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-gold" />
+                  <div className="relative z-10 flex items-center">
+                    <div
+                      className="
+                        w-8 h-8 rounded-full bg-[#0b0b0f]
+                        border border-gold/40
+                        flex items-center justify-center
+                        transition-all duration-300
+                        group-hover:border-gold
+                        group-hover:shadow-[0_0_12px_rgba(234,179,8,0.6)]
+                      "
+                    >
+                      <div
+                        className="
+                          w-3 h-3 rounded-full bg-gold
+                          transition-transform duration-300
+                          group-hover:scale-125
+                        "
+                      />
                     </div>
                   </div>
 
+
                   {/* CONTENT */}
-                  <div className="bg-purple-900/20 border border-purple-500/30
-                    rounded-xl p-6 backdrop-blur w-md">
+                  <div
+                    className="
+                      bg-purple-900/20 border border-purple-500/30
+                      rounded-xl p-6 backdrop-blur w-md
+                      transition-all duration-300
+                      group-hover:border-gold/60
+                      group-hover:bg-purple-900/30
+                      group-hover:-translate-y-1
+                    "
+                  >
                     <p className="text-sm text-gold uppercase tracking-wide mb-1">
                       {s.stage}
                     </p>
@@ -84,6 +111,7 @@ export default function Roadmap() {
                       {s.desc}
                     </p>
                   </div>
+
 
                 </div>
               ))}

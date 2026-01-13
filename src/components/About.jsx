@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
   id="about"
-  className="scroll-mt-16 bg-[#0b0b0f] py-23 relative"
+  className="scroll-mt-15 bg-[#0b0b0f] py-13 relative"
 >
 
       <AnimateOnScroll>

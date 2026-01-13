@@ -33,7 +33,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="scroll-mt-24 py-28
+      className=" py-18
       bg-gradient-to-b from-black/0 via-[#0b0b0f] to-black/0"
     >
       <div className="max-w-7xl mx-auto px-6 overflow-hidden">
