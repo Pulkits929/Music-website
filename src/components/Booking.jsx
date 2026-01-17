@@ -1,8 +1,31 @@
 export default function Booking() {
   async function handleSubmit(e) {
     e.preventDefault();
-    alert("Lesson booked successfully 🎶");
+  
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      instrument: e.target.instrument.value,
+      timeslot: e.target.timeslot.value,
+    };
+  
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycby6uPlyNv2gVqrgSmP4gPQKpWbQt9_b_PAixy6tZIM6zl2Cyur4CVzI_pI3n8AEf91qjQ/exec", {
+        method: "POST",
+        
+        body: JSON.stringify(formData),
+      });
+  
+      
+        alert("Lesson booked successfully 🎶");
+        e.target.reset();
+      
+    } catch (err) {
+      alert("Something went wrong. Try again.");
+    }
   }
+  
 
   return (
     <section
@@ -31,6 +54,7 @@ export default function Booking() {
             <form onSubmit={handleSubmit} className="space-y-6">
               
               <input
+                name="name"
                 placeholder="Full Name"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
@@ -39,6 +63,7 @@ export default function Booking() {
               />
 
               <input
+                name="email"
                 type="email"
                 placeholder="Email Address"
                 className="w-full p-4 rounded-lg
@@ -48,6 +73,7 @@ export default function Booking() {
               />
 
               <input
+                name="phone"
                 placeholder="Phone Number"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
@@ -56,6 +82,7 @@ export default function Booking() {
               />
 
               <select
+                name="instrument"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
                 focus:border-gold outline-none text-white"
@@ -65,6 +92,17 @@ export default function Booking() {
                 <option>Drums</option>
                 <option>Tabla</option>
                 <option>Music Theory</option>
+              </select>
+
+              <select
+                name="timeslot"
+                className="w-full p-4 rounded-lg
+                bg-[#0b0b0f] border border-purple-500/30
+                focus:border-gold outline-none text-white"
+              >
+                <option>11AM - 1PM</option>
+                <option>3PM - 5PM</option>
+                <option>6PM - 8PM</option>
               </select>
 
               <button

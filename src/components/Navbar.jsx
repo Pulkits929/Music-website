@@ -7,8 +7,6 @@ const navItems = [
   { label: "Services", id: "services" },
   { label: "Testimonials", id: "testimonials" },
   { label: "Portfolio", id: "portfolio" },
-  { label: "Book Lesson", id: "book" },
-  { label: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
@@ -22,39 +20,39 @@ export default function Navbar() {
   }, []);
 
   const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
-  
 
   return (
     <nav
-    className={`fixed w-full z-50 transition-all duration-300 transform
-    ${
-      scrolled
-        ? "bg-black/90 backdrop-blur  shadow-lg scale-[1.02]"
-        : "bg-gradient-to-b from-black/90 via-black/50 to-black/0 scale-100"
-    }`}
+      className={`fixed w-full z-50 transition-all duration-300
+      ${
+        scrolled
+          ? "bg-black/90 backdrop-blur shadow-lg"
+          : "bg-gradient-to-b from-black/90 via-black/50 to-black/0"
+      }`}
     >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-1">
 
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 -py-1">
-        <h1
+        {/* LOGO */}
+        <div
           onClick={() => handleScroll("home")}
-          className="font-heading text-2xl text-gold cursor-pointer"
+          className="cursor-pointer"
         >
-          <img src="/golden_logo-Photoroom.png" alt="" className="w-32 my-1 p-0 mx-6 " />
-          {/* Music Academy */}
-        </h1>
+          <img
+            src="/golden_logo-Photoroom.png"
+            alt="Music Academy"
+            className="w-32"
+          />
+        </div>
 
-        <ul className="hidden md:flex gap-8 text-base">
-
+        {/* NAV LINKS */}
+        <ul className="hidden md:flex items-center gap-8 text-base">
           {navItems.map((item) => (
             <li
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`cursor-pointer transition relative
+              className={`relative cursor-pointer transition-all duration-300
                 ${
                   activeSection === item.id
                     ? "text-gold"
@@ -63,11 +61,34 @@ export default function Navbar() {
             >
               {item.label}
 
-              {activeSection === item.id && (
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gold"></span>
-              )}
+              {/* Animated underline */}
+              <span
+                className={`absolute left-0 -bottom-1 h-[2px] bg-gold transition-all duration-300
+                ${
+                  activeSection === item.id
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`}
+              />
             </li>
           ))}
+
+          {/* CTA BUTTON */}
+          <li>
+            <button
+              whileHover={{ scale: 1.05 }}
+              
+              onClick={() => handleScroll("book")}
+              className="ml-4 px-6 py-2 rounded-xl
+              bg-gradient-to-r from-gold to-yellow-500
+              text-black font-semibold
+              shadow-md shadow-gold/30
+              hover:shadow-lg hover:shadow-gold/50
+              hover:scale-105 transition-all duration-300"
+            >
+              Book Lesson
+            </button>
+          </li>
         </ul>
       </div>
     </nav>

@@ -37,6 +37,12 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const coursesSection = document.getElementById("services");
+              if (coursesSection) {
+                coursesSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="bg-white mr-6 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
           >
             Explore Courses
@@ -44,6 +50,12 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const bookingSection = document.getElementById("book");
+              if (bookingSection) {
+                bookingSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
           >
             Book a free trial
