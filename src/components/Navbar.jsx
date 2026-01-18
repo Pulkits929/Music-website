@@ -32,17 +32,17 @@ export default function Navbar() {
           : "bg-gradient-to-b from-black/90 via-black/50 to-black/0"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-1">
+      <div className="mx-auto flex items-center justify-between  px-6 md:px-12 lg:px-16 py-3 md:py-4">
 
         {/* LOGO */}
         <div
           onClick={() => handleScroll("home")}
-          className="cursor-pointer"
+          className="cursor-pointer flex items-center translate-y-[1px]"
         >
           <img
             src="/golden_logo-Photoroom.png"
             alt="Music Academy"
-            className="w-32"
+            className="h-[2.75rem] md:h-12 w-auto object-contain"
           />
         </div>
 

@@ -7,8 +7,10 @@ import { useState } from "react";
 const services = [
   { title: "Piano Lessons", desc: "Technique, expression & sight reading",img:"/piano.jpg" },
   { title: "Drums Lessons", desc: "Groove, rhythm & coordination", img:"/drums1.jpg" },
+  { title: "Guitar Lessons", desc: "Chords, strumming & soloing", img:"/guitar.jpg" },
   { title: "Tabla Lessons", desc: "Traditional Indian percussion mastery", img:"/tabla.png" },
   { title: "Music Theory", desc: "Harmony, notation & composition", img:"/theory.jpg" },
+  
 ];
 
 const journeys = {
@@ -18,6 +20,14 @@ const journeys = {
     "Hand Coordination",
     "Advanced Pieces",
     "Performance",
+    "Mastery",
+  ],
+  "Guitar Lessons": [
+    "Chord Basics",
+    "Strumming Patterns",
+    "Scales & Solos",
+    "Song Learning",
+    "Live Playing",
     "Mastery",
   ],
   "Drums Lessons": [
@@ -54,7 +64,7 @@ export default function Services() {
     setActiveService((prev) => (prev === title ? null : title));
   };
   return (
-    <section id="services" className="scroll-mt-15 bg-gradient-to-b from-[#0b0b0f] via-black/50 to-black/0 py-20">
+    <section id="services" className="scroll-mt-5 bg-gradient-to-b from-[#0b0b0f] via-black/50 to-black/0 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-heading text-gold mb-12 text-center">
           Music Lessons Offered
@@ -69,7 +79,7 @@ export default function Services() {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="grid md:grid-cols-4 gap-6"
+          className="grid md:grid-cols-5 gap-6"
         >
           {services.map((s) => (
             <motion.div
@@ -105,7 +115,7 @@ export default function Services() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="mt-20 bg-black/50 rounded-2xl p-10 border border-gold/20"
+      className="mt-10 bg-black/50 rounded-2xl p-10 border border-gold/20"
     >
       <h3 className="text-3xl text-gold text-center mb-10">
         Your Journey to Mastery — {activeService}

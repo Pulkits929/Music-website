@@ -8,10 +8,11 @@ export default function Booking() {
       phone: e.target.phone.value,
       instrument: e.target.instrument.value,
       timeslot: e.target.timeslot.value,
+      date: e.target.date.value,
     };
   
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycby6uPlyNv2gVqrgSmP4gPQKpWbQt9_b_PAixy6tZIM6zl2Cyur4CVzI_pI3n8AEf91qjQ/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxOQPifG8uN6OY7xwDwdofnpgrW4xHfZgv9aFtWROKcK4iEOzjHGfRodhH_SP2VNONwGQ/exec", {
         method: "POST",
         
         body: JSON.stringify(formData),
@@ -58,7 +59,7 @@ export default function Booking() {
                 placeholder="Full Name"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
-                focus:border-gold outline-none text-white"
+                focus:border-gold outline-none [color-scheme:dark]"
                 required
               />
 
@@ -68,7 +69,7 @@ export default function Booking() {
                 placeholder="Email Address"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
-                focus:border-gold outline-none text-white"
+                focus:border-gold outline-none [color-scheme:dark]"
                 required
               />
 
@@ -77,16 +78,20 @@ export default function Booking() {
                 placeholder="Phone Number"
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
-                focus:border-gold outline-none text-white"
+                focus:border-gold outline-none [color-scheme:dark]"
                 required
               />
 
               <select
                 name="instrument"
+                defaultValue={""}
                 className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
-                focus:border-gold outline-none text-white"
+                focus:border-gold outline-none [color-scheme:dark]"
               >
+                <option value="" disabled>
+                  Select Instrument
+                </option>
                 <option>Piano</option>
                 <option>Guitar</option>
                 <option>Drums</option>
@@ -96,14 +101,18 @@ export default function Booking() {
 
               <select
                 name="timeslot"
-                className="w-full p-4 rounded-lg
+                className="w-1/2 p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
-                focus:border-gold outline-none text-white"
+                focus:border-gold outline-none [color-scheme:dark]"
               >
                 <option>11AM - 1PM</option>
                 <option>3PM - 5PM</option>
                 <option>6PM - 8PM</option>
               </select>
+              <input type="date" name="date"
+                className="w-1/2 p-4 rounded-lg
+                bg-[#0b0b0f] border border-purple-500/30
+                focus:border-gold outline-none [color-scheme:dark]" />
 
               <button
                 className="w-full py-4 rounded-xl

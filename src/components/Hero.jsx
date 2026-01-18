@@ -17,10 +17,10 @@ export default function Hero() {
 
       {/* Overlay to improve text readability */}
       <div className="absolute inset-0 bg-gradient-to-l from-white-950/60 via-black/70 to-black/80
- z-10" />
+      z-10" />
 
       {/* Content */}
-      <div className="relative mt-10 z-20 w-full h-full flex items-center">
+      <div className="relative mt-4 md:mt-6 z-20 w-full h-full flex items-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function Hero() {
                 bookingSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
+            className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors "
           >
             Book a free trial
           </motion.button>  

@@ -26,7 +26,7 @@ export default function App() {
       <HowItWorks></HowItWorks>
       {/* <TechRequirements></TechRequirements> */}
       <Testimonials></Testimonials>
-      <Gallery></Gallery>
+      {/* <Gallery></Gallery> */}
       <Booking></Booking>
       <Contact></Contact>
       <Footer></Footer> 
