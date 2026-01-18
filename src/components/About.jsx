@@ -88,14 +88,41 @@ export default function About() {
           </div>
 
           {/* RIGHT: Image */}
-          <div className="relative">
+          {/* <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-purple-500/20 blur-2xl"></div>
+            
+            <img
+            
+              src="/teacher_pic.jpg"
+              alt="Music Teacher"
+              className="relative rounded-2xl shadow-2xl object-cover w-full max-w-xs mx-auto "
+            />
+           
+          </div> */}
+          
+          <div className="relative group w-full max-w-xs mx-auto">
+            
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-purple-500/20 blur-2xl"></div>
+
+            
             <img
               src="/teacher_pic.jpg"
               alt="Music Teacher"
-              className="relative rounded-2xl shadow-2xl object-cover w-full max-w-xs mx-auto"
+              className="relative z-10 rounded-2xl shadow-2xl object-cover w-full
+                        transition-opacity duration-300
+                        group-hover:opacity-0"
+            />
+
+            
+            <img
+              src="/teacher_pic_hands.jpeg"
+              alt="Music Teacher Hands"
+              className="absolute inset-0 z-10 rounded-2xl shadow-2xl object-cover w-full
+                        opacity-0 transition-opacity duration-300
+                        group-hover:opacity-100"
             />
           </div>
+
 
         </div>
       </AnimateOnScroll>
