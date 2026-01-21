@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden pb-32 ">
       {/* Background Video */}
@@ -34,32 +38,26 @@ export default function Hero() {
           <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-xl">
             Personalized music lessons for Piano, Guitar, Drums, Tabla & Music Theory.
           </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const coursesSection = document.getElementById("services");
-              if (coursesSection) {
-                coursesSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className="bg-white mr-6 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors"
-          >
-            Explore Courses
-          </motion.button>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const bookingSection = document.getElementById("book");
-              if (bookingSection) {
-                bookingSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className="bg-yellow-500 hover:bg-yellow-400 text-lg uppercase text-black px-8 py-4 rounded-full transition-colors "
-          >
-            Book a free trial
-          </motion.button>  
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => scrollToSection("services")}
+    className="w-full sm:w-auto bg-white hover:bg-yellow-400 text-sm sm:text-base md:text-lg uppercase text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300"
+  >
+    Explore Courses
+  </motion.button>
+
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => scrollToSection("book")}
+    className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-400 text-sm sm:text-base md:text-lg uppercase text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300"
+  >
+    Book a free trial
+  </motion.button>
+</div>
+  
         </motion.div>
         
       </div>

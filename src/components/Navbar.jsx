@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import useActiveSection from "../hooks/useActiveSection";
+import { motion } from "framer-motion";
+
 
 const navItems = [
   { label: "Home", id: "home" },
@@ -12,6 +14,27 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const activeSection = useActiveSection();
+  const [showStickyCTA, setShowStickyCTA] = useState(false);
+
+  useEffect(() => {
+    const heroSection = document.getElementById("home");
+  
+    if (!heroSection) return;
+  
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowStickyCTA(!entry.isIntersecting);
+      },
+      {
+        threshold: 0.3, // hero is considered visible if 30% is in view
+      }
+    );
+  
+    observer.observe(heroSection);
+  
+    return () => observer.disconnect();
+  }, []);
+  
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -75,22 +98,41 @@ export default function Navbar() {
 
           {/* CTA BUTTON */}
           <li>
-            <button
+            <motion.button
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               
               onClick={() => handleScroll("book")}
               className="ml-4 px-6 py-2 rounded-xl
-              bg-gradient-to-r from-gold to-yellow-500
-              text-black font-semibold
+              bg-yellow-500 hover:bg-yellow-400
+              text-black font-thin text-md font-semibold
               shadow-md shadow-gold/30
               hover:shadow-lg hover:shadow-gold/50
               hover:scale-105 transition-all duration-300"
             >
               Book Lesson
-            </button>
+            </motion.button>
           </li>
         </ul>
       </div>
+      {showStickyCTA && (
+  <motion.button
+    onClick={() => handleScroll("book")}
+    whileTap={{ scale: 0.95 }}
+    className="fixed top-4 right-4 md:top-6 md:right-8
+     px-6 py-2 rounded-xl
+    bg-yellow-500 hover:bg-yellow-400
+    text-black font-thin text-md font-semibold       
+      shadow-md shadow-gold/30
+      block md:hidden
+      hover:shadow-lg hover:shadow-gold/50
+      hover:scale-105 transition-all duration-300              
+    z-[999]"
+  >
+    Book Lesson
+  </motion.button>
+)}
+
     </nav>
   );
 }
