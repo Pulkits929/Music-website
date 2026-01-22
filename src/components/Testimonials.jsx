@@ -1,108 +1,183 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const reviews = [
+const testimonials = [
   {
-    text: "My child’s confidence and musical skills improved drastically.",
-    author: "Parent of Piano Student",
-    image: "/students/piano1.jpeg",
+    name: "Shalini Subramanian",
+    role: "Parent · Piano",
+    initials: "SS",
+    color: "bg-purple-500",
+    short:
+      "Both my daughter and I enrolled for different music classes and we loved the experience.",
+    full:
+      "Both my daughter and I enrolled for different music classes and we loved the experience. The lessons are structured, the teachers are patient, and progress is visible within weeks. Highly recommended for parents looking for quality music education.",
   },
   {
-    text: "Structured lessons and excellent teaching style.",
-    author: "Guitar Student",
-    image: "/students/guitar.jpg",
+    name: "Manasi Shah",
+    role: "Parent · Drums",
+    initials: "MS",
+    color: "bg-blue-500",
+    short:
+      "My 7 year old son has been learning drums for the past 3 months and enjoys every class.",
+    full:
+      "My 7 year old son has been learning drums for the past 3 months and enjoys every class. The instructor keeps lessons engaging while maintaining discipline and focus. His rhythm and coordination have improved a lot.",
   },
   {
-    text: "Professional, patient, and inspiring teacher.",
-    author: "Tabla Learner",
-    image: "/students/tabla.jpg",
+    name: "Sohini Chatterjee",
+    role: "Parent · Music Theory",
+    initials: "SC",
+    color: "bg-teal-500",
+    short:
+      "I chose Harmonic Studio for my child and never looked back.",
+    full:
+      "I chose Harmonic Studio for my child and never looked back. The attention to detail, personal feedback, and structured syllabus really stand out. It feels like a premium learning experience.",
+  },
+  {
+    name: "Rohit Mehra",
+    role: "Student · Guitar",
+    initials: "RM",
+    color: "bg-yellow-500",
+    short:
+      "I finally understand chords and strumming patterns properly.",
+    full:
+      "I finally understand chords and strumming patterns properly. Earlier I was stuck for years, but the teaching approach here made everything click within a month.",
+  },
+  {
+    name: "Ananya Kapoor",
+    role: "Student · Piano",
+    initials: "AK",
+    color: "bg-pink-500",
+    short:
+      "Learning piano here has boosted my confidence.",
+    full:
+      "Learning piano here has boosted my confidence. The teacher focuses equally on technique and musical expression, which makes practice enjoyable.",
+  },
+  {
+    name: "Kunal Verma",
+    role: "Student · Drums",
+    initials: "KV",
+    color: "bg-orange-500",
+    short:
+      "Grooves and timing finally make sense to me.",
+    full:
+      "Grooves and timing finally make sense to me. The metronome exercises and live playing techniques are extremely helpful.",
+  },
+  {
+    name: "Neha Iyer",
+    role: "Parent · Tabla",
+    initials: "NI",
+    color: "bg-green-500",
+    short:
+      "Traditional teaching with a modern approach.",
+    full:
+      "Traditional teaching with a modern approach. My son enjoys learning tabla while also understanding rhythm theory clearly.",
+  },
+  {
+    name: "Amit Joshi",
+    role: "Student · Music Theory",
+    initials: "AJ",
+    color: "bg-indigo-500",
+    short:
+      "Music theory is no longer confusing.",
+    full:
+      "Music theory is no longer confusing. Concepts like harmony and chord progressions are explained very clearly with real examples.",
+  },
+  {
+    name: "Pooja Malhotra",
+    role: "Parent · Guitar",
+    initials: "PM",
+    color: "bg-red-500",
+    short:
+      "Professional, patient, and very supportive.",
+    full:
+      "Professional, patient, and very supportive. The teachers ensure that students stay motivated and progress consistently.",
+  },
+  {
+    name: "Arjun Patel",
+    role: "Student · Drums",
+    initials: "AP",
+    color: "bg-cyan-500",
+    short:
+      "Best decision I made for my musical journey.",
+    full:
+      "Best decision I made for my musical journey. From basics to advanced techniques, everything is well planned and executed.",
   },
 ];
 
 export default function Testimonials() {
-  const [active, setActive] = useState(0);
-
-  // Auto-slide
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % reviews.length);
-    }, 6000); // slow & premium
-    return () => clearInterval(interval);
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section
-      id="testimonials"
-      className=" py-18
-      bg-gradient-to-b from-black/0 via-[#0b0b0f] to-black/0"
-    >
-      <div className="max-w-7xl mx-auto px-6 overflow-hidden">
-        <h2 className="text-4xl font-heading text-gold mb-20 text-center">
-          What Students & Parents Say
-        </h2>
+    <section className="bg-dark-section py-20">
+      <div className="max-w-8xl mx-auto px-6">
 
-        {/* CAROUSEL TRACK */}
-        <div className="relative h-[360px] flex justify-center items-center overflow-hidden">
-  {reviews.map((r, i) => {
-    const total = reviews.length;
+        {/* HEADER */}
+        <div className="mb-12">
+        <h2 className="text-4xl font-heading text-center mb-16
+                         bg-gold
+                         bg-clip-text text-transparent">
+            What Students & Parents Say
+          </h2>
 
-    const rawOffset = i - active;
-
-    // Normalize offset into [-1, 0, 1]
-    let offset = rawOffset;
-    if (rawOffset > 1) offset = rawOffset - total;
-    if (rawOffset < -1) offset = rawOffset + total;
-
-    const isCenter = offset === 0;
-
-    return (
-      <motion.div
-        key={i}
-        onClick={() => setActive(i)}
-        initial={false}
-        animate={{
-          x: offset * 420,
-          scale: isCenter ? 1 : 0.9,
-          opacity: isCenter ? 1 : 0.5,
-        }}
-        transition={{
-          duration: 0.8,
-          ease: "easeOut",
-        }}
-        style={{
-          zIndex: isCenter ? 20 : 10,
-        }}
-        className="absolute cursor-pointer
-          w-[720px] h-[320px]
-          bg-purple-900/20 backdrop-blur
-          border border-gold/30 rounded-2xl
-          flex overflow-hidden shadow-2xl"
-      >
-        {/* LEFT IMAGE */}
-        <div className="w-1/2">
-          <img
-            src={r.image}
-            alt="Student learning music"
-            className="w-full h-full object-cover"
-          />
         </div>
 
-        {/* RIGHT TEXT */}
-        <div className="w-1/2 p-10 flex flex-col justify-center">
-          <p className="text-xl text-gray-200 leading-relaxed mb-6">
-            “{r.text}”
-          </p>
-          <p className="text-gold font-semibold tracking-wide">
-            {r.author}
-          </p>
+        {/* HORIZONTAL SCROLL */}
+        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+          {testimonials.map((t, i) => {
+            const isActive = activeIndex === i;
+
+            return (
+              <motion.div
+                key={i}
+                layout
+                onClick={() =>
+                  setActiveIndex(isActive ? null : i)
+                }
+                className={`cursor-pointer
+                  min-w-[320px] max-w-[320px]
+                  rounded-2xl p-6
+                  border transition-all
+                  ${
+                    isActive
+                      ? "bg-[#16161d] border-gold"
+                      : "bg-[#121218] border-white/10"
+                  }`}
+              >
+                {/* QUOTE */}
+                <div className="text-4xl text-white/10 mb-3">“</div>
+
+                {/* TEXT */}
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {isActive ? t.full : t.short}
+                  {!isActive && (
+                    <span className="text-gold ml-1">more</span>
+                  )}
+                </p>
+
+                {/* SPACER */}
+                <div className="h-6" />
+
+                {/* USER */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center
+                                text-white font-semibold ${t.color}`}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-medium">
+                      {t.name}
+                    </p>
+                    <p className="text-gray-400 text-xs">
+                      {t.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-      </motion.div>
-    );
-  })}
-</div>
-
-
-
       </div>
     </section>
   );

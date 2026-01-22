@@ -21,7 +21,8 @@ export default function About() {
             </h3>
 
             <p className="text-gray-400 text-sm sm:text-base mb-4 sm:mb-6">
-              Master of Music Education • 10+ Years Experience
+            Masters in Music <br />
+            Music production diploma from KM conservatory
             </p>
 
             <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl mb-8 sm:mb-10 leading-relaxed">

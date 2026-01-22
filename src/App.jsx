@@ -9,7 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Booking from "./components/Booking";
 import Contact from "./components/Contact";
-import Partners from "./components/partners";
+import Partners from "./components/Partners";
 import Footer from "./components/Footer";
 
 
@@ -22,8 +22,9 @@ export default function App() {
       <Hero></Hero>
       
       <About></About>
-      <Partners></Partners>
       <Services></Services>
+      <Partners></Partners>
+      
       <HowItWorks></HowItWorks>
       {/* <TechRequirements></TechRequirements> */}
       <Testimonials></Testimonials>

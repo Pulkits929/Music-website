@@ -5,13 +5,13 @@ const services = [
   { title: "Piano Lessons", desc: "Technique, expression & sight reading", img: "/piano.jpg" },
   { title: "Drums Lessons", desc: "Groove, rhythm & coordination", img: "/drums1.jpg" },
   { title: "Guitar Lessons", desc: "Chords, strumming & soloing", img: "/guitar.jpg" },
-  { title: "Tabla Lessons", desc: "Traditional Indian percussion mastery", img: "/tabla.png" },
+  { title: "Tabla Lessons", desc: "Traditional Indian percussion mastery", img: "/tabla2.jpg" },
   { title: "Music Theory", desc: "Harmony, notation & composition", img: "/theory.jpg" },
 ];
 
 const journeys = {
   "Piano Lessons": [
-    { phase: "Beginner", title: "Keyboard Basics", desc: "Finger placement, posture & key recognition", level: 1 },
+    { phase: "Beginner", title: "Basics", desc: "Finger placement, posture & key recognition", level: 1 },
     { phase: "Beginner", title: "Reading Notes", desc: "Treble & bass clef fundamentals", level: 1 },
     { phase: "Intermediate", title: "Hand Coordination", desc: "Independence & two-hand playing", level: 2 },
     { phase: "Intermediate", title: "Advanced Pieces", desc: "Classical & contemporary repertoire", level: 2 },
@@ -60,13 +60,13 @@ const levelColors = {
 };
 
 export default function Services() {
-  const [activeService, setActiveService] = useState(null);
+  const [activeService, setActiveService] = useState("Piano Lessons");
   const [hoveredStep, setHoveredStep] = useState(null);
 
   return (
-    <section id="services" className="scroll-mt-20 bg-gradient-to-b from-[#0b0b0f] via-black/50 to-black/0 py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-gold mb-8 sm:mb-10 md:mb-12 text-center">
+    <section id="services" className="scroll-mt-20 bg-[#0b0b0f] py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
+        <h2 className="text-3xl sm:text-3xl md:text-4xl font-heading text-gold mb-8 sm:mb-10 md:mb-12 text-center">
           Music Lessons Offered
         </h2>
 
@@ -140,7 +140,7 @@ export default function Services() {
                 <motion.h3
                   initial={{ scale: 0.9 }}
                   animate={{ scale: 1 }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-heading text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-300 to-gold mb-2 sm:mb-3"
+                  className="text-2xl sm:text-2xl md:text-3xl font-heading text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-300 to-gold mb-2 sm:mb-3"
                 >
                   Your Journey to Mastery
                 </motion.h3>
@@ -184,7 +184,7 @@ export default function Services() {
                         {/* Step Circle */}
                         <motion.div
                           whileHover={{ scale: 1.2 }}
-                          className={`relative z-10 w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full border-3 md:border-4 
+                          className={`relative z-10 w-14 h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 rounded-full border-3 md:border-4 
                             ${levelColors[step.level].border} ${levelColors[step.level].bg}
                             flex items-center justify-center
                             transition-all duration-300 cursor-pointer
@@ -272,31 +272,7 @@ export default function Services() {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Legend */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-gold/20 flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gold border-2 border-gold/50" />
-                  <span className="text-gray-400">Beginner</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-amber-500 border-2 border-amber-500/50" />
-                  <span className="text-gray-400">Intermediate</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 border-2 border-yellow-500/50" />
-                  <span className="text-gray-400">Advanced</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-orange-500 border-2 border-orange-500/50" />
-                  <span className="text-gray-400">Mastery</span>
-                </div>
-              </motion.div>
+              
             </motion.div>
           </motion.div>
         )}

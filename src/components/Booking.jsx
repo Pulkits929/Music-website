@@ -98,10 +98,10 @@ export default function Booking() {
                 <option>Tabla</option>
                 <option>Music Theory</option>
               </select>
-
+              <div className="grid md:grid-cols-2 gap-2">
               <select
                 name="timeslot"
-                className="w-1/2 p-4 rounded-lg
+                className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
                 focus:border-gold outline-none [color-scheme:dark]"
               >
@@ -110,15 +110,17 @@ export default function Booking() {
                 <option>6PM - 8PM</option>
               </select>
               <input type="date" name="date"
-                className="w-1/2 p-4 rounded-lg
+                className="w-full p-4 rounded-lg
                 bg-[#0b0b0f] border border-purple-500/30
                 focus:border-gold outline-none [color-scheme:dark]" />
+              </div>
+              
 
               <button
                 className="w-full py-4 rounded-xl
                 bg-gradient-to-r from-gold to-yellow-500
                 text-black font-semibold text-lg
-                hover:opacity-90 transition"
+                hover:opacity-90 transition hover:cursor-pointer active:scale-95"
               >
                 Book Your First Lesson
               </button>
