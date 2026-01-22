@@ -11,7 +11,8 @@ import Booking from "./components/Booking";
 import Contact from "./components/Contact";
 import Partners from "./components/Partners";
 import Footer from "./components/Footer";
-
+import GetInTouch from "./components/getintouch";
+import LearningInAction from "./components/learninginaction";
 
 
 export default function App() {
@@ -28,10 +29,13 @@ export default function App() {
       <HowItWorks></HowItWorks>
       {/* <TechRequirements></TechRequirements> */}
       <Testimonials></Testimonials>
+      <LearningInAction></LearningInAction>
       {/* <Gallery></Gallery> */}
       <Booking></Booking>
+      <GetInTouch></GetInTouch>
       <Contact></Contact>
       <Footer></Footer> 
+
       
     </>
   );

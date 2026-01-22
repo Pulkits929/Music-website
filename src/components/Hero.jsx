@@ -35,8 +35,8 @@ export default function Hero() {
             Experience Music. <br />
             <span className="text-yellow-500">Feel the Art.</span>
           </h1>
-          <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-xl">
-            Personalized music lessons for Piano, Guitar, Drums, Tabla & Music Theory.
+          <p className="text-gray-200 text-lg md:text-2xl mb-8 max-w-xl">
+            Personalized live 1:1 online Music lessons for Piano, Guitar, Drums, Tabla & Music Theory.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
   <motion.button

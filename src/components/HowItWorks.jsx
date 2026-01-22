@@ -34,39 +34,21 @@ export default function HowItWorks() {
                 key={i}
                 className="border border-gold/30 p-6 rounded-xl text-center"
               >
-                <div className="text-gold text-3xl font-bold mb-4">
-                  {i + 1}
-                </div>
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center
+  rounded-full
+  border border-gold/60
+  bg-gray-600/50 backdrop-blur-sm
+  text-gold text-2xl font-semibold
+  shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+  {i + 1}
+</div>
+
                 <h3 className="text-xl mb-2">{step.title}</h3>
                 <p className="text-gray-400">{step.desc}</p>
               </div>
             ))}
           </div>
-           {/* Bottom CTA */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-10 sm:mt-12 md:mt-16"
-        >
-          <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">
-            Ready to start your musical journey?
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const bookingSection = document.getElementById("book");
-              if (bookingSection) {
-                bookingSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className="bg-gradient-to-r from-gold to-amber-500 hover:from-amber-500 hover:to-gold text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg shadow-gold/30 hover:shadow-xl hover:shadow-gold/50"
-          >
-            Book Your First Lesson
-          </motion.button>
-        </motion.div> */}
+           
         </div>
       </section>
     );

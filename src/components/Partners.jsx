@@ -21,11 +21,19 @@ export default function Partners() {
         bg: "from-[#8b1f24] to-[#c53030]",
         text: "text-white",
       },
+      {
+        title: "Harmonic Studios",
+        subtitle: "Roorkee, India",
+        logo: "/golden_logo-Photoroom.png",
+        bg: "from-[#2d5a1f] to-[#3f9140]",
+        text: "text-white",
+      },
+
       
     ];
   
     return (
-      <section className="py-20 bg-[0b0b0f]">
+      <section className="py-20 bg-[#0b0b0f]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-heading text-center mb-16
                          bg-gold
@@ -34,7 +42,7 @@ export default function Partners() {
           </h2>
           
   
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {partners.map((p, i) => (
               <div
                 key={i}
@@ -55,11 +63,14 @@ export default function Partners() {
                 
   
               
-                <div className="w-24 h-12 flex items-center justify-end">
+                <div className="ml-auto flex items-center justify-center
+                bg-white/90 backdrop-blur-sm
+                rounded-md px-3 py-2
+                shadow-lg">
                   <img
                     src={p.logo}
                     alt={p.title}
-                    className="max-h-12 max-w-full object-contain"
+                    className="h-7 max-w-full object-contain"
                   />
                 </div>
               </div>

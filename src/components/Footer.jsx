@@ -9,7 +9,7 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <h3 className="font-heading text-2xl text-gold mb-4">
-              Music Academy
+              Harmonic Studios
             </h3>
             <p className="text-gray-400 max-w-sm">
               Personalized music education designed to build confidence,
@@ -47,9 +47,9 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-gray-400">
-              <li>📞 +91 XXXXXXXXXX</li>
-              <li>📧 info@musicacademy.com</li>
-              <li>🌍 Online & Offline Lessons</li>
+              <li>📞 +91 75009 58684</li>
+              <li>📧 harmonicstudio@gmail.com</li>
+              
             </ul>
           </div>
 
@@ -63,9 +63,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Music Academy. All rights reserved.
           </p>
-          <p className="mt-4 md:mt-0">
-            Crafted with passion for music 🎶
-          </p>
+          
         </div>
 
       </div>
