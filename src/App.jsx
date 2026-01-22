@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 import Partners from "./components/Partners";
 import Footer from "./components/Footer";
 import GetInTouch from "./components/getintouch";
-import LearningInAction from "./components/learninginaction";
+import LearningInAction from "./components/LearningInAction";
 
 
 export default function App() {
