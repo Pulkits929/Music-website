@@ -275,7 +275,7 @@ export default function Services() {
   return (
     <section id="services" className="scroll-mt-20 bg-[#0b0b0f] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
-        <h2 className="text-3xl sm:text-3xl md:text-4xl font-heading text-gold mb-8 sm:mb-10 md:mb-12 text-center">
+        <h2 className="text-3xl sm:text-3xl md:text-4xl font-heading text-gold mb-10 sm:mb-12 md:mb-16 text-center">
           Music Lessons Offered
         </h2>
 

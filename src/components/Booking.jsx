@@ -118,7 +118,7 @@ export default function Booking() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-heading text-gold mb-4">
+        <h2 className="text-3xl sm:text-4xl font-heading text-gold mb-3 sm:mb-4">
             Book Your Lesson
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
@@ -126,9 +126,9 @@ export default function Booking() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* FORM CARD */}
-          <div className="bg-purple-900/20 backdrop-blur border border-purple-500/20 rounded-2xl p-10">
+          <div className="bg-purple-900/20 backdrop-blur border border-purple-500/20 rounded-2xl p-6 sm:p-8 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <input
                 name="name"
@@ -220,7 +220,7 @@ export default function Booking() {
           </div>
 
           {/* FEES + TRUST */}
-          <div className="bg-purple-900/10 backdrop-blur border border-purple-500/20 rounded-2xl p-10">
+          <div className="bg-purple-900/10 backdrop-blur border border-purple-500/20 rounded-2xl p-6 sm:p-8 md:p-10">
             <h3 className="text-2xl font-heading text-gold mb-6">
               Course Fees
             </h3>

@@ -54,8 +54,7 @@ export default function LearningInAction() {
       bg-gradient-to-b from-black/0 via-[#0b0b0f] to-black/0"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-heading text-center mb-16
-                       bg-gold bg-clip-text text-transparent">
+      <h2 className="text-3xl sm:text-4xl font-heading text-gold mb-10 sm:mb-16 text-center">
           See Learning in Action
         </h2>
 
