@@ -43,19 +43,30 @@ export default function Hero() {
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     onClick={() => scrollToSection("services")}
-    className="w-full sm:w-auto bg-white hover:bg-yellow-400 text-sm sm:text-base md:text-lg uppercase text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300"
+    className="w-full cursor-pointer sm:w-auto bg-white hover:bg-yellow-400 text-sm sm:text-base md:text-lg uppercase text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
   >
-    Explore Courses
+    Explore Courses <ion-icon name="arrow-forward-outline"></ion-icon>
   </motion.button>
 
   <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    onClick={() => scrollToSection("book")}
-    className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-400 text-sm sm:text-base md:text-lg uppercase text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300"
-  >
-    Book a free trial
-  </motion.button>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => scrollToSection("book")}
+  className="
+    w-full sm:w-auto
+    bg-yellow-500 hover:bg-yellow-400
+    text-sm sm:text-base md:text-lg uppercase
+    text-black
+    px-6 sm:px-8 py-3 sm:py-4
+    rounded-full
+    flex items-center justify-center gap-2
+    transition-all duration-300 cursor-pointer
+  "
+>
+  <span>Book a free trial</span>
+  <ion-icon name="arrow-forward-outline"></ion-icon>
+</motion.button>
+
 </div>
   
         </motion.div>

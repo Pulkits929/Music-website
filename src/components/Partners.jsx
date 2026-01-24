@@ -1,4 +1,5 @@
 export default function Partners() {
+  
     const partners = [
       {
         title: "Rock School",
@@ -33,7 +34,7 @@ export default function Partners() {
     ];
   
     return (
-      <section className="py-20 bg-[#0b0b0f]">
+      <section id="partners" className="py-20 bg-[#0b0b0f]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-heading text-center mb-16
                          bg-gold

@@ -136,6 +136,20 @@ const JourneySection = ({ service, hoveredStep, setHoveredStep }) => (
       {/* Desktop Journey Timeline */}
       <div className="hidden md:block relative">
         <div className="relative">
+          {/* CONNECTING LINE */}
+          <div
+  className="
+    absolute
+    top-[68.2px]
+    left-0 right-0
+    h-[2px]
+    bg-gradient-to-r
+    from-[#d4af37]/20
+    via-[#ffd966]/60
+    to-[#d4af37]/20
+    z-0
+  "
+/>
 
           
           <div className="flex justify-between items-start relative z-10">
@@ -253,6 +267,10 @@ const JourneySection = ({ service, hoveredStep, setHoveredStep }) => (
 export default function Services() {
   const [activeService, setActiveService] = useState("Piano Lessons");
   const [hoveredStep, setHoveredStep] = useState(null);
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="services" className="scroll-mt-20 bg-[#0b0b0f] py-12 sm:py-16 md:py-20 lg:py-24">
@@ -376,6 +394,27 @@ export default function Services() {
             </AnimatePresence>
           </motion.div>
         </div>
+      </div>
+      <div className="flex items-center justify-center">
+      <button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => scrollToSection("book")}
+  className="
+    w-full sm:w-auto
+    bg-yellow-500 hover:bg-yellow-400
+    text-sm sm:text-base md:text-lg uppercase
+    text-black
+    px-6 sm:px-8 py-3 sm:py-4
+    rounded-full
+    flex items-center justify-center gap-2
+    transition-all duration-300
+    mt-5 cursor-pointer
+  "
+>
+  <span>Book a free trial</span>
+  <ion-icon name="arrow-forward-outline"></ion-icon>
+</button>
       </div>
     </section>
   );

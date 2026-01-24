@@ -8,7 +8,7 @@ import TechRequirements from "./components/TechRequirements";
 import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Booking from "./components/Booking";
-import Contact from "./components/Contact";
+
 import Partners from "./components/Partners";
 import Footer from "./components/Footer";
 import GetInTouch from "./components/getintouch";
@@ -33,7 +33,7 @@ export default function App() {
       {/* <Gallery></Gallery> */}
       <Booking></Booking>
       <GetInTouch></GetInTouch>
-      <Contact></Contact>
+
       <Footer></Footer> 
 
       

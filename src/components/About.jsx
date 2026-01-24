@@ -94,17 +94,11 @@ export default function About() {
               alt="Music Teacher"
               className="relative z-10 rounded-2xl shadow-2xl object-cover w-full
                         transition-opacity duration-300
-                        group-hover:opacity-0"
+                        "
             />
 
-            {/* Hover Image */}
-            <img
-              src="/teacher_pic_hands.jpeg"
-              alt="Music Teacher Hands"
-              className="absolute inset-0 z-10 rounded-2xl shadow-2xl object-cover w-full
-                        opacity-0 transition-opacity duration-300
-                        group-hover:opacity-100"
-            />
+           
+            
           </div>
 
         </div>

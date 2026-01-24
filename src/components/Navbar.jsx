@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 
 const navItems = [
   { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Services", id: "services" },
-  { label: "Testimonials", id: "testimonials" },
-  { label: "Portfolio", id: "portfolio" },
+  { label: "Know Your Teacher", id: "about" },
+  { label: "Courses", id: "services" },
+  { label: "Certifications", id: "partners" },
+  { label: "Portfolio", id: "testimonials" },
+  { label: "Contact", id: "contact" },
+  
+  
 ];
 
 export default function Navbar() {
@@ -103,7 +106,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               
               onClick={() => handleScroll("book")}
-              className="ml-4 px-6 py-2 rounded-xl
+              className="ml-4 cursor-pointer px-6 py-2 rounded-xl
               bg-yellow-500 hover:bg-yellow-400
               text-black font-thin text-md font-semibold
               shadow-md shadow-gold/30

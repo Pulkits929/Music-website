@@ -7,7 +7,7 @@ export default function GetInTouch() {
     const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="bg-[#0b0b0f] text-gray-200 py-16 px-5">
+    <section id="contact" className="bg-[#0b0b0f] text-gray-200 py-16 px-5">
       <div className="max-w-6xl mx-auto">
       <h2 className="text-4xl font-heading text-center mb-16
                          bg-gold

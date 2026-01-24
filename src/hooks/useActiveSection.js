@@ -5,8 +5,9 @@ const sectionIds = [
   "about",
   "services",
   "testimonials",
+  "partners",
   "portfolio",
-  "book",
+  
   "contact",
 ];
 
