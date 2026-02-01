@@ -2,15 +2,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const services = [
-  { title: "Piano Lessons", desc: "Technique, expression & sight reading", img: "/piano.jpg" },
-  { title: "Drums Lessons", desc: "Groove, rhythm & coordination", img: "/drums1.jpg" },
-  { title: "Guitar Lessons", desc: "Chords, strumming & soloing", img: "/guitar.jpg" },
-  { title: "Tabla Lessons", desc: "Traditional Indian percussion mastery", img: "/tabla2.jpg" },
-  { title: "Music Theory", desc: "Harmony, notation & composition", img: "/theory.jpg" },
+  { title: "Piano Courses", desc: "Technique, expression & sight reading", img: "/piano.jpg" },
+  { title: "Drums Courses", desc: "Groove, rhythm & coordination", img: "/drums1.jpg" },
+  { title: "Guitar Courses", desc: "Chords, strumming & soloing", img: "/guitar.jpg" },
+  { title: "Tabla Courses", desc: "Traditional Indian percussion mastery", img: "/tabla2.jpg" },
+  { title: "Music Courses", desc: "Harmony, notation & composition", img: "/theory.jpg" },
 ];
 
 const journeys = {
-  "Piano Lessons": [
+  "Piano Courses": [
     { phase: "Beginner", title: "Basics", desc: "Finger placement, posture & key recognition", level: 1 },
     { phase: "Beginner", title: "Reading Notes", desc: "Treble & bass clef fundamentals", level: 1 },
     { phase: "Intermediate", title: "Hand Coordination", desc: "Independence & two-hand playing", level: 2 },
@@ -18,7 +18,7 @@ const journeys = {
     { phase: "Advanced", title: "Performance", desc: "Stage presence & interpretation", level: 3 },
     { phase: "Mastery", title: "Mastery", desc: "Virtuoso technique & personal style", level: 4 },
   ],
-  "Guitar Lessons": [
+  "Guitar Courses": [
     { phase: "Beginner", title: "Chord Basics", desc: "Open chords & finger strength", level: 1 },
     { phase: "Beginner", title: "Strumming Patterns", desc: "Rhythm & timing exercises", level: 1 },
     { phase: "Intermediate", title: "Scales & Solos", desc: "Lead techniques & improvisation", level: 2 },
@@ -26,7 +26,7 @@ const journeys = {
     { phase: "Advanced", title: "Live Playing", desc: "Performance skills & confidence", level: 3 },
     { phase: "Mastery", title: "Mastery", desc: "Advanced soloing & composition", level: 4 },
   ],
-  "Drums Lessons": [
+  "Drums Courses": [
     { phase: "Beginner", title: "Stick Control", desc: "Grip, rebound & rudiments", level: 1 },
     { phase: "Beginner", title: "Basic Grooves", desc: "Rock, pop & basic patterns", level: 1 },
     { phase: "Intermediate", title: "Timing & Tempo", desc: "Metronome work & consistency", level: 2 },
@@ -34,7 +34,7 @@ const journeys = {
     { phase: "Advanced", title: "Live Playing", desc: "Band coordination & improvisation", level: 3 },
     { phase: "Mastery", title: "Mastery", desc: "Complex polyrhythms & signature style", level: 4 },
   ],
-  "Tabla Lessons": [
+  "Tabla Courses": [
     { phase: "Beginner", title: "Bol Basics", desc: "Fundamental syllables & sounds", level: 1 },
     { phase: "Beginner", title: "Hand Technique", desc: "Proper stroke & tonal clarity", level: 1 },
     { phase: "Intermediate", title: "Taal Structures", desc: "Rhythmic cycles & patterns", level: 2 },
@@ -42,7 +42,7 @@ const journeys = {
     { phase: "Advanced", title: "Accompaniment", desc: "Supporting vocal & instrumental music", level: 3 },
     { phase: "Mastery", title: "Mastery", desc: "Solo performance & gharana mastery", level: 4 },
   ],
-  "Music Theory": [
+  "Music Courses": [
     { phase: "Beginner", title: "Notation", desc: "Reading & writing music", level: 1 },
     { phase: "Beginner", title: "Scales", desc: "Major, minor & modes", level: 1 },
     { phase: "Intermediate", title: "Chords", desc: "Triads, 7ths & extensions", level: 2 },
@@ -74,7 +74,7 @@ const levelColors = {
   },
 
   3: { // Advanced – deep royal gold
-    bg: "bg-gradient-to-br from-[#f5dd90]/14 to-transparent",
+    bg: "bg-gradient-to-br from-[#f5dd90]/16 to-transparent",
     border: "border-[#f5dd90]/55",
     text: "text-[#f5dd90]",
     glow: "shadow-[0_0_30px_rgba(245,221,144,0.4)]",
@@ -265,7 +265,7 @@ const JourneySection = ({ service, hoveredStep, setHoveredStep }) => (
 );
 
 export default function Services() {
-  const [activeService, setActiveService] = useState("Piano Lessons");
+  const [activeService, setActiveService] = useState(null);
   const [hoveredStep, setHoveredStep] = useState(null);
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -276,7 +276,7 @@ export default function Services() {
     <section id="services" className="scroll-mt-20 bg-[#0b0b0f] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         <h2 className="text-3xl sm:text-3xl md:text-4xl font-heading text-gold mb-10 sm:mb-12 md:mb-16 text-center">
-          Music Lessons Offered
+          Music Courses Offered
         </h2>
 
         {/* Mobile: Each card with its journey below */}
@@ -397,8 +397,7 @@ export default function Services() {
       </div>
       <div className="flex items-center justify-center">
       <button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
+  
   onClick={() => scrollToSection("book")}
   className="
     w-full sm:w-auto

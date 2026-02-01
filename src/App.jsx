@@ -27,10 +27,10 @@ export default function App() {
       <Partners></Partners>
       
       <HowItWorks></HowItWorks>
-      {/* <TechRequirements></TechRequirements> */}
+      
       <Testimonials></Testimonials>
       <LearningInAction></LearningInAction>
-      {/* <Gallery></Gallery> */}
+
       <Booking></Booking>
       <GetInTouch></GetInTouch>
 

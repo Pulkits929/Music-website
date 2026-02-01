@@ -37,7 +37,7 @@ export default function Partners() {
       <section id="partners" className="py-20 bg-[#0b0b0f]">
         <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl font-heading text-gold mb-3 sm:mb-16 text-center">
-            Partnerships
+            Certification
           </h2>
           
   

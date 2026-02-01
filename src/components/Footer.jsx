@@ -47,8 +47,8 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-gray-400">
-              <li>📞 +91 75009 58684</li>
-              <li>📧 harmonicstudio@gmail.com</li>
+              <li>📞 +91 790611 25586</li>
+              <li>📧 the.harmoniclearningstudio@gmail.com</li>
               
             </ul>
           </div>
