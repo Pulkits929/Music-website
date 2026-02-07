@@ -55,6 +55,7 @@ const journeys = {
 const levelColors = {
   1: { // Beginner – soft antique gold
     bg: "bg-gradient-to-br from-[#d4af37]/10 to-transparent",
+  
     border: "border-[#d4af37]/40",
     text: "text-[#e6c75f]",
     glow: "shadow-[0_0_20px_rgba(212,175,55,0.25)]",
@@ -138,18 +139,18 @@ const JourneySection = ({ service, hoveredStep, setHoveredStep }) => (
         <div className="relative">
           {/* CONNECTING LINE */}
           <div
-  className="
-    absolute
-    top-[68.2px]
-    left-0 right-0
-    h-[2px]
-    bg-gradient-to-r
-    from-[#d4af37]/20
-    via-[#ffd966]/60
-    to-[#d4af37]/20
-    z-0
-  "
-/>
+            className="
+              absolute
+              top-[68.2px]
+              left-0 right-0
+              h-[2px]
+              bg-gradient-to-r
+              from-[#d4af37]/20
+              via-[#ffd966]/60
+              to-[#d4af37]/20
+              z-0
+            "
+          />
 
           
           <div className="flex justify-between items-start relative z-10">

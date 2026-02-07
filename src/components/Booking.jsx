@@ -1,6 +1,233 @@
 import { useState } from "react";
 
+
+
+const COURSE_DATA = {
+  Piano: {
+    Foundation: {
+      duration: "3–4 Months",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Foundation",
+      ],
+    },
+    Beginner: {
+      duration: "6–8 Months (per book)",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 1",
+        "Rockschool Piano Debut",
+        "Rockschool Piano Grade 1",
+        "Trinity Piano Initial",
+        "Trinity Piano Grade 1",
+        "ABRSM Piano Initial",
+        "ABRSM Piano Grade 1",
+      ],
+    },
+    Intermediate: {
+      duration: "8–10 Months (per book)",
+      fee: 700,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 2",
+        "Rockschool Piano Grade 2",
+        "Rockschool Piano Grade 3",
+        "Rockschool Piano Grade 4",
+        "Trinity Piano Grade 2",
+        "Trinity Piano Grade 3",
+        "Trinity Piano Grade 4",
+      ],
+    },
+    Advanced: {
+      duration: "12 Months (per book)",
+      fee: 1000,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 3",
+        "Rockschool Piano Grade 5",
+        "Rockschool Piano Grade 6",
+        "Rockschool Piano Grade 7",
+        "Rockschool Piano Grade 8",
+        "Trinity Piano Grade 5",
+        "Trinity Piano Grade 6",
+        "Trinity Piano Grade 7",
+        "Trinity Piano Grade 8",
+      ],
+    },
+  },
+  Tabla: {
+    Foundation: {
+      duration: "3–4 Months",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Foundation",
+      ],
+    },
+    Beginner: {
+      duration: "6–8 Months (per book)",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 1",
+        "Rockschool Piano Debut",
+        "Rockschool Piano Grade 1",
+        "Trinity Piano Initial",
+        "Trinity Piano Grade 1",
+        "ABRSM Piano Initial",
+        "ABRSM Piano Grade 1",
+      ],
+    },
+    Intermediate: {
+      duration: "8–10 Months (per book)",
+      fee: 700,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 2",
+        "Rockschool Piano Grade 2",
+        "Rockschool Piano Grade 3",
+        "Rockschool Piano Grade 4",
+        "Trinity Piano Grade 2",
+        "Trinity Piano Grade 3",
+        "Trinity Piano Grade 4",
+      ],
+    },
+    Advanced: {
+      duration: "12 Months (per book)",
+      fee: 1000,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 3",
+        "Rockschool Piano Grade 5",
+        "Rockschool Piano Grade 6",
+        "Rockschool Piano Grade 7",
+        "Rockschool Piano Grade 8",
+        "Trinity Piano Grade 5",
+        "Trinity Piano Grade 6",
+        "Trinity Piano Grade 7",
+        "Trinity Piano Grade 8",
+      ],
+    },
+  },
+
+  Drums: {
+    Foundation: {
+      duration: "3–4 Months",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Foundation",
+      ],
+    },
+    Beginner: {
+      duration: "6–8 Months (per book)",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 1",
+        "Rockschool Piano Debut",
+        "Rockschool Piano Grade 1",
+        "Trinity Piano Initial",
+        "Trinity Piano Grade 1",
+        "ABRSM Piano Initial",
+        "ABRSM Piano Grade 1",
+      ],
+    },
+    Intermediate: {
+      duration: "8–10 Months (per book)",
+      fee: 700,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 2",
+        "Rockschool Piano Grade 2",
+        "Rockschool Piano Grade 3",
+        "Rockschool Piano Grade 4",
+        "Trinity Piano Grade 2",
+        "Trinity Piano Grade 3",
+        "Trinity Piano Grade 4",
+      ],
+    },
+    Advanced: {
+      duration: "12 Months (per book)",
+      fee: 1000,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 3",
+        "Rockschool Piano Grade 5",
+        "Rockschool Piano Grade 6",
+        "Rockschool Piano Grade 7",
+        "Rockschool Piano Grade 8",
+        "Trinity Piano Grade 5",
+        "Trinity Piano Grade 6",
+        "Trinity Piano Grade 7",
+        "Trinity Piano Grade 8",
+      ],
+    },
+  },
+
+  Guitar: {
+    Foundation: {
+      duration: "3–4 Months",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Foundation",
+      ],
+    },
+    Beginner: {
+      duration: "6–8 Months (per book)",
+      fee: 500,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 1",
+        "Rockschool Piano Debut",
+        "Rockschool Piano Grade 1",
+        "Trinity Piano Initial",
+        "Trinity Piano Grade 1",
+        "ABRSM Piano Initial",
+        "ABRSM Piano Grade 1",
+      ],
+    },
+    Intermediate: {
+      duration: "8–10 Months (per book)",
+      fee: 700,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 2",
+        "Rockschool Piano Grade 2",
+        "Rockschool Piano Grade 3",
+        "Rockschool Piano Grade 4",
+        "Trinity Piano Grade 2",
+        "Trinity Piano Grade 3",
+        "Trinity Piano Grade 4",
+      ],
+    },
+    Advanced: {
+      duration: "12 Months (per book)",
+      fee: 1000,
+      session: "60 min",
+      syllabus: [
+        "Harmonic Studio Piano Book 3",
+        "Rockschool Piano Grade 5",
+        "Rockschool Piano Grade 6",
+        "Rockschool Piano Grade 7",
+        "Rockschool Piano Grade 8",
+        "Trinity Piano Grade 5",
+        "Trinity Piano Grade 6",
+        "Trinity Piano Grade 7",
+        "Trinity Piano Grade 8",
+      ],
+    },
+  },
+};
+
 export default function Booking() {
+  const [selectedInstrument, setSelectedInstrument] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("");
+  
+
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -166,27 +393,33 @@ export default function Booking() {
               </div>
 
               <select
-                name="instrument"
-                defaultValue=""
-                className="
-                  w-full p-4 rounded-lg bg-white
-                  border border-purple-500/30
-                  focus:border-gold focus:ring-0
-                  outline-none
-                  text-black
-                  focus:text-gray-800
-                  invalid:text-gray-400
-                "
+                name="level"
+                value={selectedLevel}
+                onChange={(e) => setSelectedLevel(e.target.value)}
+                className="w-full p-4 rounded-lg bg-white text-black border border-purple-500/30"
               >
-                <option value="" disabled hidden>
-                  Select Instrument
-                </option>
-                <option value="Piano" className="text-gray-800">Piano</option>
-                <option value="Guitar" className="text-gray-800">Guitar</option>
-                <option value="Drums" className="text-gray-800">Drums</option>
-                <option value="Tabla" className="text-gray-800">Tabla</option>
-                <option value="Music Theory" className="text-gray-800">Music Theory</option>
+                <option value="" disabled hidden>Select Level</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
               </select>
+
+
+
+              <select
+                name="instrument"
+                value={selectedInstrument}
+                onChange={(e) => setSelectedInstrument(e.target.value)}
+                className="w-full p-4 rounded-lg bg-white text-black border border-purple-500/30"
+              >
+                <option value="" disabled hidden>Select Instrument</option>
+                <option value="Piano">Piano</option>
+                <option value="Guitar">Guitar</option>
+                <option value="Drums">Drums</option>
+                <option value="Tabla">Tabla</option>
+              </select>
+
 
 
               <div className="grid md:grid-cols-2 gap-2">
@@ -220,35 +453,77 @@ export default function Booking() {
           </div>
 
           {/* FEES + TRUST */}
-          <div className="bg-purple-900/10 backdrop-blur border border-purple-500/20 rounded-2xl p-6 sm:p-8 md:p-10">
-            <h3 className="text-2xl font-heading text-gold mb-6">
-              Course Fees
-            </h3>
+          <div>
+          <h3 className="text-2xl font-heading text-gold mb-6">
+  Course Details
+</h3>
 
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex justify-between">
-                <span>Piano</span>
-                <span className="text-gold">₹1500 / session</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Drums</span>
-                <span className="text-gold">₹1200 / session</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Tabla</span>
-                <span className="text-gold">₹1200 / session</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Music Theory</span>
-                <span className="text-gold">₹1000 / session</span>
-              </li>
-            </ul>
+{!selectedInstrument || !selectedLevel ? (
+  <div className="text-gray-400 text-center py-8 border border-dashed border-purple-500/30 rounded-xl">
+    <p className="text-lg mb-2">🎹 Select instrument & level</p>
+    <p className="text-sm">
+      Course details will appear here
+    </p>
+  </div>
+) : (
+  (() => {
+    const course =
+      COURSE_DATA[selectedInstrument]?.[selectedLevel];
 
-            <div className="border-t border-purple-500/30 pt-6 text-gray-400 text-sm space-y-2">
-              <p>✔ One-on-one personal lessons</p>
-              <p>✔ Tailored to student's level</p>
-              <p>✔ Experienced & patient teaching</p>
-            </div>
+    if (!course) {
+      return (
+        <p className="text-gray-400">
+          Course details not available for this selection.
+        </p>
+      );
+    }
+
+    return (
+      <div className="space-y-5 text-gray-300">
+        <div className="flex justify-between">
+          <span>Instrument</span>
+          <span className="text-gold font-semibold">
+            {selectedInstrument}
+          </span>
+        </div>
+
+        <div className="flex justify-between">
+          <span>Level</span>
+          <span>{selectedLevel}</span>
+        </div>
+
+        <div className="flex justify-between">
+          <span>Duration</span>
+          <span>{course.duration}</span>
+        </div>
+
+        <div className="flex justify-between">
+          <span>Session Fee</span>
+          <span className="text-gold font-semibold">
+            ₹{course.fee} / session
+          </span>
+        </div>
+
+        <div className="flex justify-between">
+          <span>Session Length</span>
+          <span>{course.session}</span>
+        </div>
+
+        <div className="pt-4 border-t border-purple-500/30">
+          <p className="text-gold mb-2 font-semibold">
+            Syllabus Covered
+          </p>
+          <ul className="list-disc list-inside space-y-1 text-sm">
+            {course.syllabus.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  })()
+)}
+
           </div>
         </div>
       </div>
