@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { label: "Home", id: "home" },
   { label: "Know Your Teacher", id: "about" },
-  { label: "Courses", id: "services" },
+  { label: "Courses", id: "coursedrawer" },
   { label: "Certifications", id: "partners" },
   { label: "Portfolio", id: "testimonials" },
   { label: "Contact", id: "contact" },
@@ -66,9 +66,9 @@ export default function Navbar() {
           className="cursor-pointer flex items-center translate-y-[1px]"
         >
           <img
-            src="/golden_logo-Photoroom.png"
+            src="/logoharmonic.png"
             alt="Music Academy"
-            className="h-[2.75rem] md:h-12 w-auto object-contain"
+            className="h-[2.75rem] md:h-15 w-auto  object-contain"
           />
         </div>
 

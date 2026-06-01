@@ -393,21 +393,6 @@ export default function Booking() {
               </div>
 
               <select
-                name="level"
-                value={selectedLevel}
-                onChange={(e) => setSelectedLevel(e.target.value)}
-                className="w-full p-4 rounded-lg bg-white text-black border border-purple-500/30"
-              >
-                <option value="" disabled hidden>Select Level</option>
-                <option value="Foundation">Foundation</option>
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-              </select>
-
-
-
-              <select
                 name="instrument"
                 value={selectedInstrument}
                 onChange={(e) => setSelectedInstrument(e.target.value)}
@@ -420,7 +405,19 @@ export default function Booking() {
                 <option value="Tabla">Tabla</option>
               </select>
 
-
+              {/* levels */}
+              <select
+                name="level"
+                value={selectedLevel}
+                onChange={(e) => setSelectedLevel(e.target.value)}
+                className="w-full p-4 rounded-lg bg-white text-black border border-purple-500/30"
+              >
+                <option value="" disabled hidden>Select Level</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
 
               <div className="grid md:grid-cols-2 gap-2">
                 <select
@@ -493,25 +490,26 @@ export default function Booking() {
         </div>
 
         <div className="flex justify-between">
-          <span>Duration</span>
-          <span>{course.duration}</span>
-        </div>
-
-        <div className="flex justify-between">
           <span>Session Fee</span>
           <span className="text-gold font-semibold">
             ₹{course.fee} / session
           </span>
         </div>
 
+
         <div className="flex justify-between">
           <span>Session Length</span>
           <span>{course.session}</span>
         </div>
+        
+        <div className="flex justify-between">
+          <span>Duration</span>
+          <span>{course.duration}</span>
+        </div>
 
         <div className="pt-4 border-t border-purple-500/30">
           <p className="text-gold mb-2 font-semibold">
-            Syllabus Covered
+            Course Pathway Offered
           </p>
           <ul className="list-disc list-inside space-y-1 text-sm">
             {course.syllabus.map((item, idx) => (
@@ -519,6 +517,8 @@ export default function Booking() {
             ))}
           </ul>
         </div>
+        
+        <p >Note:- <span className="italic">The appropriate syllabus is selected by our faculty based on the student’s level, goals, and learning pace.</span></p>
       </div>
     );
   })()

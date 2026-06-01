@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const sectionIds = [
   "home",
   "about",
-  "services",
+  "coursedrawer",
   "testimonials",
   "partners",
   "portfolio",

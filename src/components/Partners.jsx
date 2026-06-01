@@ -1,33 +1,41 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Partners() {
+  const navigate = useNavigate();
   
     const partners = [
       {
         title: "Rock School",
         subtitle: "UK",
-        logo: "/partners/rsl.png",
+        logo: "/partners/rsl1.png",
         bg: "from-[#1a5d7e] to-[#1f7fae]",
         text: "text-white",
+        name:"rsl",
       },
       {
         title: "Trinity College",
         subtitle: "UK",
-        logo: "/partners/trinity.png",
+        logo: "/partners/trinity1.png",
         bg: "from-[#5a2d6f] to-[#7a3f91]",
         text: "text-white",
+        name:"trinity",
       },
       {
-        title: "Associated Board Of The",
-        subtitle: "Royal Schools Of Music",
-        logo: "/partners/abrsm.png",
+        title: "Associated Board Of The Royal Schools Of Music",
+        subtitle: "UK",
+        logo: "/partners/abrsm3.png",
         bg: "from-[#8b1f24] to-[#c53030]",
         text: "text-white",
+        name:"abrsm",
       },
       {
         title: "Harmonic Studios",
         subtitle: "Roorkee, India",
-        logo: "/golden_logo-Photoroom.png",
-        bg: "from-[#2d5a1f] to-[#3f9140]",
+        logo: "/logoharmonic.png",
+        bg: "from-[#108263] to-[#0a1628]",
+        height: "h-15",
         text: "text-white",
+        name:"harmonicstudios",
       },
 
       
@@ -41,17 +49,19 @@ export default function Partners() {
           </h2>
           
   
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 ">
             {partners.map((p, i) => (
               <div
                 key={i}
-                className={`h-[140px] rounded-2xl bg-gradient-to-r ${p.bg}
-                            shadow-lg flex items-center justify-between
+                className={`h-[140px] rounded-2xl bg-gradient-to-br ${p.bg}
+                            shadow-lg  items-center justify-between
                             px-8 transition-all duration-300
-                            hover:-translate-y-2 hover:shadow-xl`}
+                            hover:-translate-y-2 hover:shadow-xl cursor-pointer
+                            grid grid-cols-2`}
+                onClick={() => navigate(`/${p.name}`)}
               >
                 
-                <div className={`font-sans ${p.text}`}>
+                <div className={`font-sans ${p.text} col-span-1 `}>
                   <p className="text-lg font-semibold leading-snug">
                     {p.title}
                   </p>
@@ -63,41 +73,19 @@ export default function Partners() {
   
               
                 <div className="ml-auto flex items-center justify-center
-                bg-white/90 backdrop-blur-sm
+                 
                 rounded-md px-3 py-2
-                shadow-lg">
+                ">
                   <img
                     src={p.logo}
                     alt={p.title}
-                    className="h-7 max-w-full object-contain"
+                    
+                    className={`${p.height ? p.height : "h-22"} w-auto object-contain`}
                   />
                 </div>
               </div>
               
-//               <div className="
-//   relative h-[140px] rounded-xl
-//   bg-[#12141a]
-//   flex items-center px-8
-//   overflow-hidden
-// " key={i}>
 
-//   <span className="absolute left-0 top-0 h-full w-1 bg-gold" />
-
-//   <div className="ml-4">
-//     <p className="text-white text-lg font-semibold">
-//       {p.title}
-//     </p>
-//     <p className="text-sm text-gray-400">
-//       {p.subtitle}
-//     </p>
-//   </div>
-
-//   <img
-//     src={p.logo}
-//     className="ml-auto h-10 opacity-70"
-//     alt=""
-//   />
-// </div>
 
 
             ))}

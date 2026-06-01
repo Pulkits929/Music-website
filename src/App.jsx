@@ -1,43 +1,23 @@
-import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
 
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Services";
-import HowItWorks from "./components/HowItWorks";
-import TechRequirements from "./components/TechRequirements";
-import Testimonials from "./components/Testimonials";
-import Gallery from "./components/Gallery";
-import Booking from "./components/Booking";
+import Trinity from "./pages/trinity";
+import Harmonicstudios from "./pages/harmonicstudios";
+import Abrsm from "./pages/abrsm";
+import Rsl from "./pages/rsl";
 
-import Partners from "./components/Partners";
-import Footer from "./components/Footer";
-import GetInTouch from "./components/getintouch";
-import LearningInAction from "./components/LearningInAction";
 
 
 export default function App() {
   return (
-    <>
-    
-      <Navbar />
-      <Hero></Hero>
-      
-      <About></About>
-      <Services></Services>
-      <Partners></Partners>
-      
-      <HowItWorks></HowItWorks>
-      
-      <Testimonials></Testimonials>
-      <LearningInAction></LearningInAction>
-
-      <Booking></Booking>
-      <GetInTouch></GetInTouch>
-
-      <Footer></Footer> 
-
-      
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/trinity" element={<Trinity />} />
+      <Route path="/harmonicstudios" element={<Harmonicstudios />} />
+      <Route path="/abrsm" element={<Abrsm />} />
+      <Route path="/rsl" element={<Rsl />} />
+     
+    </Routes>
   );
 }
 
